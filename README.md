@@ -1,3 +1,17 @@
-# data_analysis_project
+# Анализ Пользователей В Соц Cети
+## Авторы: Шигабутдинов Марат Гатауллин Эдгар и Гордеев Сергей
 
-Занимаемся изучением материалов по семантике текста. В частности, читали статьи, такие как https://cyberleninka.ru/article/n/semantika-i-smysl-teksta-eksperimentalnyy-podhod-k-teoreticheskim-problemam и https://habr.com/ru/post/263171/
+## Что мы использовали для проекта
+  - [VK API](https://vk-api.readthedocs.io/en/latest/)
+  - Python и его библиотеки для анализа
+
+## Цель:
+> Проанализировать текстовые посты пользователя и дать им оценку
+
+## Анализ данных
+> Сережа добавь сюда свои данные
+
+## Список литературы
+* https://cyberleninka.ru/article/n/semantika-i-smysl-teksta-eksperimentalnyy-podhod-k-teoreticheskim-problemam 
+* https://habr.com/ru/post/263171/
+
