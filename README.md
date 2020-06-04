@@ -9,9 +9,6 @@
 > Проанализировать текстовые посты пользователя и дать им оценку
 > Получить зачёт
 
-## Анализ данных
-> Сережа добавь сюда свои данные
-
 ## Список литературы
 * https://cyberleninka.ru/article/n/semantika-i-smysl-teksta-eksperimentalnyy-podhod-k-teoreticheskim-problemam 
 * https://habr.com/ru/post/263171/
