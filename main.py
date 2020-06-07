@@ -17,16 +17,17 @@ def rate_post(post):
   v = post.views_count
   c = post.comments
 
-  rating = 0
-  text_rating = rate_text(t)
-  feedback_rating = rate_feedback(l, r, v)
+  ratings = []
+  if t:
+    ratings.append(rate_text(t))
+  ratings.append(rate_feedback(l, r, v))
   if len(c) != 0:
-    comments_rating = rate_comments(c)
-    rating = (text_rating + feedback_rating + comments_rating) / 3
-  else: 
-    rating = (text_rating + feedback_rating) / 2
+    ratings.append(rate_comments(c))
 
-  return rating
+  sum = 0
+  for rating in ratings:
+    sum += rating
+  return sum / len(ratings)
 
 def rate_text(text):
   w = 1

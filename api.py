@@ -8,6 +8,7 @@ class Api:
         self.tools = vk_api.VkTools(vk_session)
 
     def get_posts(self, owner_id, is_group):
+        owner_id = int(owner_id)
         if is_group:
             owner_id = -owner_id
         wall = self.tools.get_all('wall.get', 100, {'owner_id': owner_id})
@@ -42,6 +43,7 @@ class Api:
         return Post(post_data['id'], text, likes_count, reposts_count, views_count)
 
     def get_comments(self, owner_id, post_id, is_group):
+        owner_id = int(owner_id)
         if is_group:
             owner_id = -owner_id
         comments_data = self.tools.get_all('wall.getComments', 100, {
