@@ -20,7 +20,7 @@ def rate_post(post):
   ratings = []
   if t:
     ratings.append(rate_text(t))
-  ratings.append(rate_feedback(l, r, v))
+  ratings.append(rate_feedback(l, r, len(c), v))
   if len(c) != 0:
     ratings.append(rate_comments(c))
 
@@ -46,8 +46,8 @@ def rate_text(text):
 
   return rating
 
-def rate_feedback(likes, reposts, views):
-  return min((likes + 10 * reposts) / (views * 0.5), 10)
+def rate_feedback(likes, reposts, comments_count, views):
+  return min((likes + 100 * reposts + 20 * comments_count) / (views * 0.8), 10)
 
 def rate_comments(comments):
   s = 0
