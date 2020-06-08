@@ -4,11 +4,11 @@ from models import Post, Comment
 whitelist = []
 with open('whitelist.txt','r') as file: 
   for line in file: 
-    whitelist.append(line)  
+    whitelist.append(line.replace('\n', ''))  
 blacklist = []
 with open('blacklist.txt','r') as file: 
   for line in file: 
-    blacklist.append(line)
+    blacklist.append(line.replace('\n', ''))
 
 def rate_post(post):
   t = post.text
@@ -30,6 +30,8 @@ def rate_post(post):
   return sum / len(ratings)
 
 def rate_text(text):
+  text = text.lower()
+    
   w = 1
   for word in whitelist:
     if word in text:
@@ -47,7 +49,9 @@ def rate_text(text):
   return rating
 
 def rate_feedback(likes, reposts, comments_count, views):
-  return min((likes + 100 * reposts + 20 * comments_count) / (views * 0.8), 10)
+  rating = min((likes + 100 * reposts + 20 * comments_count) / (views * 0.8), 10)
+  print(rating)
+  return rating
 
 def rate_comments(comments):
   s = 0
@@ -67,7 +71,7 @@ print("Please, enter analyzing wall owner's id or 'stop' to exit")
 owner_id = input()
 while 'stop' != owner_id:
   print('Is it a group?')
-  is_group = input()
+  is_group = bool(input())
   posts = api.get_posts_with_comments(owner_id, is_group)
   ratings = []
   for post in posts:

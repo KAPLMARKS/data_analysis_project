@@ -26,7 +26,7 @@ class Api:
         if 'copy_history' in post_data:
             copy_history = list(map(Api.parse_post, post_data['copy_history']))
             for post in copy_history:
-                text += ' ' + copy_history.text
+                text += ' ' + post.text
 
         likes_count = 0
         if 'likes' in post_data:
